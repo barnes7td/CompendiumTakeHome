@@ -1,4 +1,4 @@
-Compendium Takehome Problem
+\Compendium Takehome Problem
 ===========================
 
 The following is a test designed to ensure you have a fundamental understanding of building applications. It is not meant to be challenging, just to qualify your skills and open a conversation.
