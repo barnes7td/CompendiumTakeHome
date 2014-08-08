@@ -1,6 +1,8 @@
 require_relative "./tower.rb"
 
 class CommandLine
+  attr_reader :tower
+
   def initialize
     @tower = Tower.new
   end
@@ -12,6 +14,7 @@ class CommandLine
   end
 
   def output(choice)
+    # binding.pry
     case choice[0]
     when "seed"
       @tower.seed
@@ -29,11 +32,19 @@ class CommandLine
       floors = choice[1..-1]
       @tower.go(floors)
     when "where"
-      #NOOP
+      @tower.where
     when "quit"
       return "Elevator over!"
     end
 
-    @tower.status
+    result = []
+
+    result << '------------------------'
+    result << @tower.message
+    result << '------------------------'
+    result << @tower.status
+    result << @tower.clear_messages
+
+    result.join("\n")
   end
 end

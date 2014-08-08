@@ -1,4 +1,6 @@
 class Passenger
+  attr_reader :elevator
+
   def initialize
     @floor = 1
     @elevator = nil
@@ -37,10 +39,16 @@ class Passenger
   end
 
   def send_elevator_to(floors)
+    message = []
     @destinations = floors
     @destinations.each do |floor|
       @elevator.go_to_floor(floor.to_i)
-      puts "You road Elevator ##{@elevator.number} to floor ##{floor}"
+      message << "You road Elevator ##{@elevator.number} to floor ##{floor}"
+    end
+    if message.length > 1
+      message.join("\n")
+    else
+      message
     end
   end
 end

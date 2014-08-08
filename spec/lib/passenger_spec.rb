@@ -40,7 +40,7 @@ describe Passenger do
       elevator.go_to_floor(4)
 
       @passenger.enter_elevator(elevator)
-      expect(@passenger.in_elevator?).to be_true
+      expect(@passenger.in_elevator?).to eq(true)
     end
   end
 
@@ -52,7 +52,7 @@ describe Passenger do
       @passenger.enter_elevator(elevator)
       elevator.go_to_floor(6)
       @passenger.exit_elevator
-      expect(@passenger.in_elevator?).to be_false
+      expect(@passenger.in_elevator?).to eq(false)
     end
   end
 
@@ -63,7 +63,7 @@ describe Passenger do
         elevator.go_to_floor(4)
 
         @passenger.enter_elevator(elevator)
-        expect(@passenger.in_elevator?).to be_true
+        expect(@passenger.in_elevator?).to eq(true)
       end
     end
 
@@ -74,7 +74,7 @@ describe Passenger do
 
         @passenger.enter_elevator(elevator)
         @passenger.exit_elevator
-        expect(@passenger.in_elevator?).to be_false
+        expect(@passenger.in_elevator?).to eq(false)
       end
     end
   end
@@ -86,11 +86,11 @@ describe Passenger do
         elevator.go_to_floor(4)
 
         @passenger.enter_elevator(elevator)
-        expect(elevator.door_open?).to be_true
+        expect(elevator.door_open?).to eq(true)
 
         @passenger.close_elevator_door
 
-        expect(elevator.door_open?).to be_false
+        expect(elevator.door_open?).to eq(false)
       end
     end
   end

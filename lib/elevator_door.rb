@@ -1,5 +1,5 @@
 class ElevatorDoor
-  def intitialize
+  def initialize
     @open = false
   end
 

@@ -10,14 +10,19 @@ class Elevation
 
   def run
     loop do
-      puts "Choose a command:"
+      print "elevation >:  "
       choice = gets.chomp.downcase.split
       puts
 
       output = @command_line.output(choice)
-      puts output
 
-      break if output == "Elevator over!"
+      if output == "Elevator over!"
+        puts output
+        break
+      else
+        puts output
+      end
+
     end
   end
 
